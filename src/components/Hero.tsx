@@ -48,7 +48,7 @@ export default function Hero() {
           </div>
 
           {/* Qualifying text */}
-          <p className="mt-5 text-muted-dark text-sm tracking-wide">
+          <p className="mt-5 text-muted text-sm tracking-wide">
             Acceso limitado para promotores y fondos de inversión en España
           </p>
         </div>

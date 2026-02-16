@@ -38,7 +38,7 @@ export default function AnimateOnScroll({
   return (
     <div
       ref={ref}
-      className={`animate-on-scroll ${className}`}
+      className={`animate-on-scroll h-full ${className}`}
       style={delay ? { transitionDelay: `${delay}s` } : undefined}
     >
       {children}

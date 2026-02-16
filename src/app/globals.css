@@ -92,42 +92,46 @@ body::after {
 
 /* ──── Glass card ──── */
 
-.glass-card {
-  background: rgba(20, 27, 45, 0.5);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(201, 169, 78, 0.08);
-  border-radius: 16px;
-  transition: border-color 0.4s ease, background-color 0.4s ease;
-}
+@layer components {
+  .glass-card {
+    background: rgba(20, 27, 45, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(201, 169, 78, 0.08);
+    border-radius: 16px;
+    transition: border-color 0.4s ease, background-color 0.4s ease;
+  }
 
-.glass-card:hover {
-  border-color: rgba(201, 169, 78, 0.18);
-  background: rgba(20, 27, 45, 0.65);
+  .glass-card:hover {
+    border-color: rgba(201, 169, 78, 0.18);
+    background: rgba(20, 27, 45, 0.65);
+  }
 }
 
 /* ──── Form inputs ──── */
 
-.form-input {
-  background: rgba(14, 21, 40, 0.8);
-  border: 1px solid rgba(138, 143, 158, 0.2);
-  border-radius: 10px;
-  padding: 14px 16px;
-  color: var(--color-cream);
-  font-size: 15px;
-  font-family: inherit;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  width: 100%;
-}
+@layer components {
+  .form-input {
+    background: rgba(14, 21, 40, 0.8);
+    border: 1px solid rgba(138, 143, 158, 0.2);
+    border-radius: 10px;
+    padding: 14px 16px;
+    color: var(--color-cream);
+    font-size: 15px;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+  }
 
-.form-input::placeholder {
-  color: var(--color-muted-dark);
-}
+  .form-input::placeholder {
+    color: var(--color-muted);
+  }
 
-.form-input:focus {
-  outline: none;
-  border-color: rgba(201, 169, 78, 0.4);
-  box-shadow: 0 0 0 3px rgba(201, 169, 78, 0.08);
+  .form-input:focus {
+    outline: none;
+    border-color: rgba(201, 169, 78, 0.4);
+    box-shadow: 0 0 0 3px rgba(201, 169, 78, 0.08);
+  }
 }
 
 /* ──── Section glow separator ──── */
@@ -182,28 +186,30 @@ body::after {
 
 /* ──── CTA Button base ──── */
 
-.btn-gold {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 32px;
-  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
-  color: var(--color-navy);
-  font-weight: 600;
-  font-size: 15px;
-  border-radius: 10px;
-  letter-spacing: 0.01em;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  cursor: pointer;
-  border: none;
-}
+@layer components {
+  .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+    color: var(--color-navy);
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 10px;
+    letter-spacing: 0.01em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+    border: none;
+  }
 
-.btn-gold:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(201, 169, 78, 0.25);
-  background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
-}
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(201, 169, 78, 0.25);
+    background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+  }
 
-.btn-gold:active {
-  transform: translateY(0);
+  .btn-gold:active {
+    transform: translateY(0);
+  }
 }

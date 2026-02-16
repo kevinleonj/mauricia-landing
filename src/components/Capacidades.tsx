@@ -56,7 +56,7 @@ export default function Capacidades() {
           </h2>
         </AnimateOnScroll>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 auto-rows-fr">
           {CAPABILITIES.map((cap, i) => (
             <AnimateOnScroll key={cap.title} delay={0.05 + i * 0.08}>
               <div className="glass-card p-7 lg:p-8 h-full flex flex-col">
@@ -67,10 +67,10 @@ export default function Capacidades() {
                   {cap.description}
                 </p>
                 {cap.logos === "office" && (
-                  <div className="flex items-center gap-2.5 mt-5 pt-4 border-t border-cream/5">
-                    <ExcelLogo size={24} />
-                    <WordLogo size={24} />
-                    <PowerPointLogo size={24} />
+                  <div className="flex items-center gap-3 mt-5 pt-4 border-t border-cream/5">
+                    <ExcelLogo size={30} />
+                    <WordLogo size={30} />
+                    <PowerPointLogo size={30} />
                   </div>
                 )}
               </div>

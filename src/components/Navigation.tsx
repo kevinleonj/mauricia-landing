@@ -55,12 +55,14 @@ export default function Navigation() {
           </div>
 
           {/* Desktop CTA */}
-          <a
-            href="#contacto"
-            className="hidden lg:inline-flex btn-gold !py-2.5 !px-6 !text-sm"
-          >
-            Solicitar Acceso
-          </a>
+          <div className="hidden lg:block">
+            <a
+              href="#contacto"
+              className="btn-gold py-2.5 px-6 text-sm"
+            >
+              Solicitar Acceso
+            </a>
+          </div>
 
           {/* Hamburger button */}
           <button

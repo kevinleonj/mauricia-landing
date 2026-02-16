@@ -37,7 +37,7 @@ export default function ParaQuien() {
           </h2>
         </AnimateOnScroll>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 auto-rows-fr">
           {AUDIENCES.map((audience, i) => (
             <AnimateOnScroll key={audience.title} delay={0.1 + i * 0.12}>
               <div className="glass-card p-8 lg:p-10 h-full flex flex-col">

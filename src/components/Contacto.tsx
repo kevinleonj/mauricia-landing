@@ -23,7 +23,7 @@ export default function Contacto() {
     const data = new FormData(form);
 
     try {
-      const res = await fetch("https://formspree.io/f/xyzgoldr", {
+      const res = await fetch("https://formspree.io/f/mpqjrzyl", {
         method: "POST",
         body: data,
         headers: { Accept: "application/json" },
@@ -77,7 +77,7 @@ export default function Contacto() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                action="https://formspree.io/f/xyzgoldr"
+                action="https://formspree.io/f/mpqjrzyl"
                 method="POST"
               >
                 {/* Honeypot */}

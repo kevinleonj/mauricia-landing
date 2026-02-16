@@ -44,19 +44,14 @@ export default function ComoFunciona() {
           </h2>
         </AnimateOnScroll>
 
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 items-start">
           {STEPS.map((step, i) => (
-            <AnimateOnScroll key={step.number} delay={0.1 + i * 0.15}>
+            <AnimateOnScroll key={step.number} delay={0.1 + i * 0.15} className="!h-auto">
               <div className="relative">
                 {/* Step number */}
                 <span className="block font-serif text-6xl lg:text-7xl text-gold/20 mb-4 leading-none select-none">
                   {step.number}
                 </span>
-
-                {/* Connecting line (desktop) */}
-                {i < STEPS.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-[calc(100%+8px)] w-[calc(100%-16px)] h-px bg-gradient-to-r from-gold/15 to-transparent" />
-                )}
 
                 {/* Title */}
                 <h3 className="font-serif text-xl lg:text-2xl text-cream mb-3">
@@ -70,9 +65,9 @@ export default function ComoFunciona() {
 
                 {/* Product logos */}
                 {step.logos.length > 0 && (
-                  <div className="flex items-center gap-2.5 mt-5">
+                  <div className="flex items-center gap-3 mt-5">
                     {step.logos.map((LogoComponent, j) => (
-                      <LogoComponent key={j} size={26} />
+                      <LogoComponent key={j} size={30} />
                     ))}
                   </div>
                 )}
