@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+/* ──────────────────────────────────────────────
+   MauricIA Design System — Tailwind v4 Theme
+   ────────────────────────────────────────────── */
+
+@theme {
+  --color-navy: #0A0F1C;
+  --color-navy-light: #0E1528;
+  --color-slate: #141B2D;
+  --color-slate-light: #1C2540;
+  --color-gold: #C9A94E;
+  --color-gold-dark: #B89840;
+  --color-gold-light: #D4B962;
+  --color-steel: #5B7B9A;
+  --color-steel-light: #7A98B3;
+  --color-cream: #F0EDE6;
+  --color-muted: #8A8F9E;
+  --color-muted-dark: #636878;
+
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+  --font-serif: var(--font-dm-serif), Georgia, serif;
+
+  --animate-mesh-1: mesh-drift-1 20s ease-in-out infinite;
+  --animate-mesh-2: mesh-drift-2 25s ease-in-out infinite;
+  --animate-mesh-3: mesh-drift-3 30s ease-in-out infinite;
+}
+
+/* ──── Base ──── */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-navy);
+  color: var(--color-cream);
+  overflow-x: hidden;
+}
+
+/* ──── Noise grain overlay ──── */
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ──── Scroll-triggered animations ──── */
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ──── Hero gradient mesh keyframes ──── */
+
+@keyframes mesh-drift-1 {
+  0%, 100% { transform: translate(0%, 0%) scale(1); }
+  25% { transform: translate(5%, -8%) scale(1.05); }
+  50% { transform: translate(-3%, 5%) scale(0.95); }
+  75% { transform: translate(8%, 3%) scale(1.02); }
+}
+
+@keyframes mesh-drift-2 {
+  0%, 100% { transform: translate(0%, 0%) scale(1); }
+  25% { transform: translate(-8%, 5%) scale(0.97); }
+  50% { transform: translate(5%, -3%) scale(1.08); }
+  75% { transform: translate(-3%, -6%) scale(1.01); }
+}
+
+@keyframes mesh-drift-3 {
+  0%, 100% { transform: translate(0%, 0%) scale(1); }
+  25% { transform: translate(6%, 4%) scale(1.03); }
+  50% { transform: translate(-6%, -6%) scale(0.96); }
+  75% { transform: translate(-2%, 8%) scale(1.06); }
+}
+
+/* ──── Glass card ──── */
+
+.glass-card {
+  background: rgba(20, 27, 45, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(201, 169, 78, 0.08);
+  border-radius: 16px;
+  transition: border-color 0.4s ease, background-color 0.4s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(201, 169, 78, 0.18);
+  background: rgba(20, 27, 45, 0.65);
+}
+
+/* ──── Form inputs ──── */
+
+.form-input {
+  background: rgba(14, 21, 40, 0.8);
+  border: 1px solid rgba(138, 143, 158, 0.2);
+  border-radius: 10px;
+  padding: 14px 16px;
+  color: var(--color-cream);
+  font-size: 15px;
+  font-family: inherit;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.form-input::placeholder {
+  color: var(--color-muted-dark);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: rgba(201, 169, 78, 0.4);
+  box-shadow: 0 0 0 3px rgba(201, 169, 78, 0.08);
+}
+
+/* ──── Section glow separator ──── */
+
+.section-glow {
+  position: relative;
+}
+
+.section-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 78, 0.2), transparent);
+}
+
+/* ──── Dot grid pattern ──── */
+
+.dot-pattern {
+  background-image: radial-gradient(rgba(201, 169, 78, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ──── Selection ──── */
+
+::selection {
+  background: rgba(201, 169, 78, 0.3);
+  color: var(--color-cream);
+}
+
+/* ──── Scrollbar ──── */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-navy);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-muted-dark);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted);
+}
+
+/* ──── CTA Button base ──── */
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+  color: var(--color-navy);
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 10px;
+  letter-spacing: 0.01em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201, 169, 78, 0.25);
+  background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
