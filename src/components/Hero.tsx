@@ -41,9 +41,17 @@ export default function Hero() {
           </p>
 
           {/* CTA */}
-          <div className="mt-10 lg:mt-12">
+          <div className="mt-10 lg:mt-12 flex flex-col sm:flex-row gap-4">
             <a href="#contacto" className="btn-gold text-base lg:text-lg">
               Solicitar Acceso Anticipado
+            </a>
+            <a
+              href="https://ca-mauricia-web.agreeableforest-13d35d68.westeurope.azurecontainerapps.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-4 text-base lg:text-lg font-semibold text-gold border border-gold/30 rounded-[10px] hover:bg-gold/10 hover:border-gold/50 transition-all duration-300"
+            >
+              Entrar a la Plataforma &rarr;
             </a>
           </div>
 

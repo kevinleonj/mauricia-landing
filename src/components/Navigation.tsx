@@ -3,6 +3,9 @@
 import { useState, useEffect } from "react";
 import Logo from "./Logo";
 
+const APP_URL =
+  "https://ca-mauricia-web.agreeableforest-13d35d68.westeurope.azurecontainerapps.io";
+
 const NAV_LINKS = [
   { href: "#que-hacemos", label: "Qué Hacemos" },
   { href: "#como-funciona", label: "Cómo Funciona" },
@@ -54,8 +57,16 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden lg:block">
+          {/* Desktop CTAs */}
+          <div className="hidden lg:flex items-center gap-3">
+            <a
+              href={APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="py-2.5 px-6 text-sm font-semibold text-gold border border-gold/30 rounded-[10px] hover:bg-gold/10 transition-all duration-300"
+            >
+              Entrar
+            </a>
             <a
               href="#contacto"
               className="btn-gold py-2.5 px-6 text-sm"
@@ -108,6 +119,15 @@ export default function Navigation() {
               {link.label}
             </a>
           ))}
+          <a
+            href={APP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={closeMenu}
+            className="text-gold text-xl font-serif tracking-wide border border-gold/30 rounded-[10px] px-8 py-3 hover:bg-gold/10 transition-colors duration-300"
+          >
+            Entrar a la Plataforma
+          </a>
           <a
             href="#contacto"
             onClick={closeMenu}
